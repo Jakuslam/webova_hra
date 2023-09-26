@@ -17,17 +17,41 @@ class UploadFileForm(FlaskForm):
 
 
 
-
-
 #webside
 @app.route("/", methods=["GET","POST"])
 def home():
 
+    points = 0 
     if request.method == "POST": #when somebody push button inicialize "POST method"
         if(request.form.get("NuclearPlant")):
-            return render_template("main.html")
+            
+            points = 0
+            questionNumber = 0
+            return render_template("main.html", points = points, questionNumber = questionNumber)
         
+        if(request.form.get("NuclearPlant1")):
+            print(request.form.get("points"))
+            if(request.form.get("points") == None):
+                points = 0
+                questionNumber = 0
+            else:
+                points = request.form.get("points")
+                questionNumber = 1 + int(request.form.get("from"))
+            points = int(points) + 1
+            print(points)
+            return render_template("main.html", points = points, questionNumber = questionNumber )
+            
+        if(request.form.get("NuclearPlant2")):
+            if(request.form.get("points") == None):
+                points = 0
+                questionNumber = 0
+            else:
+                points = request.form.get("points")
+                questionNumber = 1 + int(request.form.get("from"))
+            print(points)
+            return render_template("main.html", points = points, questionNumber = questionNumber)
         
+
     return render_template("home.html")
 
     
