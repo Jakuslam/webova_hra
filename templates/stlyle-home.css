@@ -9,24 +9,26 @@ body{
     overflow: hidden;
 }
 span{
+    cursor: default;
+    margin-top: 10px;
     margin-left: 110px;
-    position: relative;
+    color: beige;
+    position: fixed;
 }
 #bg{
     margin-top: -6%;
     width: 100%;
     height: 120%;
     position: absolute;
-    background-image: url(Images\back.jpg);
 }
 ul {
     list-style: none;
 }
 #play{
-    margin-top: 120px;
+    margin-top: 85px;
 }
 a{
-    margin-left: 110px;
+    margin-left: -140px;
     display: inline-block;
     position: relative;
     padding-top: 30px;
