@@ -11,17 +11,24 @@ app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
 
 
-
 class UploadFileForm(FlaskForm):
     file = FileField("File", validators=[InputRequired()])
     submit = SubmitField("Upload File")
 
+
+
+
+
+#webside
 @app.route("/", methods=["GET","POST"])
 def home():
 
-    if request.method == "POST": #při post metodě
-        return render_template("main.html", text="login")
-    return render_template("home.html", text="login")
+    if request.method == "POST": #when somebody push button inicialize "POST method"
+        if(request.form.get("NuclearPlant")):
+            return render_template("main.html")
+        
+        
+    return render_template("home.html")
 
     
 if(__name__ == "__main__"):
