@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stlyles.css') }}" >
+</head>
+<body>
+    <img id="bg" src="{{url_for('static', filename='Images/back.jpg')}} ">
+    <span>CEG</span>
+    <ul>
+        <li>
+            <a href="play.html" id="play">Play</a>
+        </li>
+        <li>
+            <a href="continue.html">Continue</a>
+        </li>
+        <li>
+            <a href="about.html">About</a>
+        </li> 
+        <li> 
+            <a href="settings.html">Settings</a>
+        </li>
+    </ul>
+</body>
+</html>

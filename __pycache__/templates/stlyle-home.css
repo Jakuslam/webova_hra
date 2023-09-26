@@ -20,6 +20,10 @@ span{
     width: 100%;
     height: 120%;
     position: absolute;
+<<<<<<<< HEAD:__pycache__/templates/stlyle-home.css
+========
+    background-image: url(Images/back.jpg);
+>>>>>>>> db546160a8ea92c59fba4d4361712541558a7711:__pycache__/static/css/stlyles.css
 }
 ul {
     list-style: none;
