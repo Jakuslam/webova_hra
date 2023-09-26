@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="stlyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stlyles.css') }}" >
 </head>
 <body>
-    <img id="bg" src="Images\back.jpg">
+    <img id="bg" src="{{url_for('static', filename='Images/back.jpg')}} ">
     <span>CEG</span>
     <ul>
         <li>

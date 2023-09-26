@@ -66,13 +66,16 @@ def home():
 
             questionNumber += 1
             if(questionNumber >= 10):
-                return render_template("home.html")
+                return render_template("h2.html")
             
             return render_template("main.html", points = points, questionNumber = questionNumber)
         
 
-    return render_template("home.html")
+    return render_template("h2.html")
 
-    
+@app.route("/game.html", methods=["GET","POST"])
+
+def game():
+    return render_template("game.html")
 if(__name__ == "__main__"):
     app.run(debug=True)
