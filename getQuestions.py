@@ -1,6 +1,7 @@
 import csv
 
 def getQuestion(questionSet, numberOfQuestion):
+    numberOfQuestion += 1
     with open("Questions/" + questionSet + ".csv", 'r') as file:
         exitRow = []
         csvreader = csv.reader(file)
@@ -12,7 +13,5 @@ def getQuestion(questionSet, numberOfQuestion):
             i +=1
         return exitRow
 
-
-print(getQuestion("countries", 3))
 header = ['Question', 'Answ1', 'Answ2', 'rightAnsv']
 

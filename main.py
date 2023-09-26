@@ -8,8 +8,6 @@ from wtforms.validators import InputRequired
 
 from getQuestions import *
 
-print(getQuestion("countries", 3))
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -34,26 +32,42 @@ def home():
             questionNumber = 0
             return render_template("main.html", points = points, questionNumber = questionNumber)
         
-        if(request.form.get("NuclearPlant1")):
-            print(request.form.get("points"))
-            if(request.form.get("points") == None):
-                points = 0
-                questionNumber = 0
-            else:
-                points = request.form.get("points")
-                questionNumber = 1 + int(request.form.get("from"))
-            points = int(points) + 1
-            print(points)
-            return render_template("main.html", points = points, questionNumber = questionNumber )
+        if(request.form.get("NuclearPlant1") or request.form.get("NuclearPlant2")):
+            whatWasPushed = 0
+            if(request.form.get("NuclearPlant1")):
+                whatWasPushed = 1
+                if(request.form.get("points") == None):
+                    points = 0
+                    questionNumber = 0
+                else:
+                    points = request.form.get("points")
+                
+            if(request.form.get("NuclearPlant2")):
+                whatWasPushed = 2
+                if(request.form.get("points") == None):
+                    points = 0
+                    questionNumber = 0
+                else:
+                    points = request.form.get("points")
+
+                    
+            questionNumber = int(request.form.get("from"))      
+            if(questionNumber + 1 >= 10):
+                return render_template("home.html")
             
-        if(request.form.get("NuclearPlant2")):
-            if(request.form.get("points") == None):
-                points = 0
-                questionNumber = 0
-            else:
-                points = request.form.get("points")
-                questionNumber = 1 + int(request.form.get("from"))
-            print(points)
+            dataToQuestion = getQuestion("NuclearPlant", int(questionNumber)) 
+            print(dataToQuestion)
+            print("..............................")
+            print(whatWasPushed)
+            print(dataToQuestion[3])
+            if(whatWasPushed == int(dataToQuestion[3])):
+                points = int(points) + 1
+                print("Hello")
+
+            questionNumber += 1
+            if(questionNumber >= 10):
+                return render_template("home.html")
+            
             return render_template("main.html", points = points, questionNumber = questionNumber)
         
 
