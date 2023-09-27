@@ -9,8 +9,9 @@
 <body onload="load()">
     <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
     <div class="ceg">
-        <span><span>x</span>/10<span>
+        <img src="Images/icon.png" class="icon">
     </div>
+    <img src="Images/home.png" class="home">
     <div class="points">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl">
@@ -30,6 +31,7 @@
         <div class="loreUp">
             <img src="{{ url_for('static', filename='Images/pole.png') }}" class="pict">
             <a class="g" href="poleG.html">Field</a>
+
         </div>
         <span class="score">Score: <span class="score2">x</span>/10<span></span>
     </div>

@@ -9,8 +9,9 @@
 <body onload="load()"> 
     <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
     <div class="ceg">
-        <span><span>x</span>/10<span>
+        <img src="Images/icon.png" class="icon">
     </div>
+    <img src="Images/home.png" class="home">
     <div class="points">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl">
@@ -27,7 +28,7 @@
     <div id="dark"></div>
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
-        <div class="loreUp"> 
+        <div class="loreUp">
             <img src="{{ url_for('static', filename='Images/elektrarna-blend.png') }}" class="pict">
             <a class="g" onclick="jadG()">Nuclear power plant</a>
         </div>

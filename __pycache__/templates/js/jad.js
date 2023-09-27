@@ -1,14 +1,11 @@
+function home(){
+    window.location = 'h2.html';
+}
 function jad(){
     window.location = 'jad.html';
 }
-function jadG(){
-    window.location = 'jadG.html';
-}
 function vet(){
     window.location = 'vet.html';
-}
-function vetG(){
-    window.location = 'vetG.html';
 }
 function vod(){
     window.location = 'vod.html';
