@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEG</title>
-    <link href="css/style-ten-games.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style-ten-games.css') }}" rel="stylesheet">
 </head>
 <body onload="load()" style="background-image:url(Images/back.jpg);">
     <div id="op">
-        <div class="header">
-            <img src="Images/backicon.png" onclick="back()">
+        <div class="header"> 
+            <img src="{{ url_for('static', filename='Images/backicon.png') }}" onclick="back()">
             <span class="game">Nuclear power plant</span>
-            <span class="score">Score: <span>0</span>/10</span>
+            <span class="score">Score: <span>{{points}}</span>/{{questions}}</span>
         </div>
         <div class="name ot">
             <div class="ot">
-                <p>Lorem impuls?</p>
+                <p>{{question}}</p>
             </div>
         </div>
-        <form class="name">
-            <button class="but" id="a">Lorem impuls</button>
+        <form class="name" method="POST">
+            <button class="but" id="a" name="a" value="a">{{ansv1}}</button>
             <div class="five"></div>
-            <button class="but" id="b">Lorem impuls</button>
+            <button class="but" id="b" name="b" value="b">{{ansv2}}</button>
+            <br>
+            <input type="hidden" name="points" id="points" value="{{points}}"><input type="hidden" id="questions" name="questions" value="{{questions}}" >
         </form>
-    </div>
-    <script src="js/jad.js"></script>
+    </div> 
+    <script src="{{ url_for('static', filename='js/jad.js') }}"></script>
 </body>
 </html>

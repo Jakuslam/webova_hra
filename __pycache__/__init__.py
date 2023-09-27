@@ -1,0 +1,117 @@
+from urllib import request
+from flask import render_template, request
+
+from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField
+from wtforms.validators import InputRequired
+import jadernaEnergie
+import pole
+from getQuestions import *
+
+
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'supersecretkey'
+app.config['UPLOAD_FOLDER'] = 'weby'
+
+#webside
+@app.route("/", methods=["GET","POST"])
+def home():
+    return render_template("h2.html")
+
+@app.route("/game.html", methods=["GET","POST"])
+def newGame():
+    return render_template("game.html")
+
+@app.route("/jad.html", methods=["GET","POST"])
+def jad():
+    return render_template("jad.html")
+
+@app.route("/pole.html", methods=["GET","POST"])
+def pol():
+    return render_template("pole.html")
+
+@app.route("/bio.html", methods=["GET","POST"])
+def bio():
+    return render_template("bio.html")
+
+@app.route("/idk.html", methods=["GET","POST"])
+def idk():
+    return render_template("idk.html")
+
+@app.route("/les.html", methods=["GET","POST"])
+def les():
+    return render_template("les.html")
+
+@app.route("/reka.html", methods=["GET","POST"])
+def reka():
+    return render_template("reka.html")
+
+@app.route("/slun.html", methods=["GET","POST"])
+def slun():
+    return render_template("slun.html")
+
+@app.route("/uh.html", methods=["GET","POST"])
+def uh():
+    return render_template("uh.html")
+
+@app.route("/vet.html", methods=["GET","POST"])
+def vet():
+    return render_template("vet.html")
+
+@app.route("/vod.html", methods=["GET","POST"])
+def vod():
+    return render_template("vod.html")
+
+@app.route("/jadG.html", methods=["GET","POST"])
+def jadG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        print(questions)
+        otazka = jadernaEnergie.getInfoJadro(int(questions))
+
+        if int(questions) +1 >= jadernaEnergie.getLenJadro():
+            return render_template("jad.html", points = points, questions = questions)
+        
+        print(otazka)
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+
+        if(request.form.get("b")):
+            print(2)
+        
+        questions = 1 + int(questions)
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = jadernaEnergie.getInfoJadro(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/poleG.html", methods=["GET","POST"])
+def poles():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        otazka = pole.getInfoPole(int(questions))
+
+        if int(questions) +1 >= pole.getLenPole():
+            return render_template("pole.html", points = points, questions = questions)
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+
+        questions = 1 + int(questions)
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = pole.getInfoPole(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+
+if(__name__ == "__main__"):
+    app.run(debug=True)
