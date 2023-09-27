@@ -13,13 +13,19 @@ body{
 img{
     position: absolute;
 }
+.home{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 12px;
+    height: 50px;
+}
 .ceg{
-    margin-top: -7px;
+    cursor: default;
+    margin-top: 1px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(18, 18, 18);
     position: absolute;
 }
 .points{
@@ -110,6 +116,8 @@ img{
     cursor: pointer;
     display: inline-block;
     position: relative;
+    text-decoration: none;
+    color: whitesmoke;
     transition: transform 300ms;
 }
 .g:hover {
@@ -149,4 +157,8 @@ img{
     100% {
         opacity: 1;
     }
+}
+.icon{
+    position: relative;
+    width: 70px;
 }
