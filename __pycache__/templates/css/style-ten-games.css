@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: whitesmoke;
+    cursor: default;
+}
+body{
+    overflow: hidden;
+}
+div{
+    width: 100%;
+}
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score{
+    margin-left: 600px;
+    position: absolute;
+}
+img{
+    cursor: pointer;
+    height: 34px;
+    margin-left: 2.5%;
+}
+.header{
+    padding-bottom: 10px;
+}
+.ot{
+    margin-top: 5px;
+    width: 95%;
+}
+.game{
+    margin-left: 20px;
+    font-weight: 600;
+    font-style: italic;
+}
+p{
+    font-weight: 350;
+    font-size: 52px;
+}
+.five{
+    width: 5%;
+}
+.but{
+    margin-top: 50px;
+    width: 45%;
+    height: 380px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 650;
+    border-radius: 45px;
+}
+#a{
+    background-color: rgba(180, 18, 45, 0.4);;
+}
+#b{
+    background-color: rgba(18, 32, 180, 0.4);
+}
+#op{
+    height: 900px;
+    background-color: rgb(18, 18, 18, 0.65);;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
