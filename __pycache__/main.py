@@ -57,7 +57,6 @@ def home():
             
             dataToQuestion = getQuestion("NuclearPlant", int(questionNumber)) 
             print(dataToQuestion)
-            print("..............................")
             print(whatWasPushed)
             print(dataToQuestion[3])
             if(whatWasPushed == int(dataToQuestion[3])):
