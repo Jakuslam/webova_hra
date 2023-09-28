@@ -1,5 +1,5 @@
 function home(){
-    window.location = 'h2.html';
+    window.location = '/';
 }
 function jad(){
     window.location = 'jad.html';
