@@ -22,18 +22,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
 
-#webside 
+#webside
 @app.route("/", methods=["GET","POST"])
 def home():
-    return render_template("h2.html") 
-
-@app.route("/about.html", methods=["GET","POST"])
-def abought():
-    return render_template("about.html")
-
-@app.route("/settings.html", methods=["GET","POST"])
-def settings():
-    return render_template("settings.html")
+    return render_template("h2.html")
 
 @app.route("/game.html", methods=["GET","POST"])
 def newGame():
