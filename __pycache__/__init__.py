@@ -12,6 +12,7 @@ import les as ls
 import doly as dl
 import bioOdpad as bios
 import vodniElektrarna as vodA
+import solarniElaktrarna as so
 from getQuestions import *
 
 
@@ -20,10 +21,18 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
 
-#webside
+#webside 
 @app.route("/", methods=["GET","POST"])
 def home():
-    return render_template("h2.html")
+    return render_template("h2.html") 
+
+@app.route("/about.html", methods=["GET","POST"])
+def abought():
+    return render_template("about.html")
+
+@app.route("/settings.html", methods=["GET","POST"])
+def settings():
+    return render_template("settings.html")
 
 @app.route("/game.html", methods=["GET","POST"])
 def newGame():
@@ -259,6 +268,33 @@ def vodG():
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
     otazka = vodA.getInfoHydro(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/slunG.html", methods=["GET","POST"])
+def slunG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= so.getLenSolar():
+            return render_template("slun.html", points = points, questions = int(questions) +1)
+        
+        otazka = so.getInfoSolar(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = so.getInfoSolar(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = so.getInfoSolar(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
 
