@@ -35,7 +35,3 @@ function back(){
     window.location = 'game.html';
 }
 
-function deletePoint(){
-    let j = document.getElementById("JadEl");
-    j.parentNode.removeChild(j);
-}

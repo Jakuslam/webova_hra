@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEG</title> 
-    <link rel="icon" href="{{ url_for('static', filename='Images/icon.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Images/icon.png') }}">    
     <link href="{{ url_for('static', filename='css/style-game.css') }}" rel="stylesheet">
 </head>
 <body> 
@@ -14,18 +14,44 @@
     </div> 
     <img src="{{ url_for('static', filename='Images/home.png') }}" class="home" onclick="home()">
     <div class="points">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl" onclick="jad()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl" onclick="vod()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl" onclick="vet()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl" onclick="slun()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa" onclick="bio()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les" onclick="les()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka" onclick="reka()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole" onclick="pole()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol" onclick="uh()">
-        <img src="{{ url_for('static', filename='Images/BossPoint.png')}}" class="point" id="skoda" onclick="skoda()">
+        {%for point in body%}
+            {%if point == 0%}
+                <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl" onclick="jad()">
+            {%endif%}
+            {%if point == 1%}
+                <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl" onclick="vod()">
+            {%endif%}
+            {%if point == 2%}
+                <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl" onclick="vet()">
+            {%endif%}
+            {%if point == 3%}
+                <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl" onclick="slun()">
+            {%endif%}
+            {%if point == 4%}
+                <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa" onclick="bio()">
+            {%endif%}
+            {%if point == 5%}
+                <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les" onclick="les()">
+            {%endif%}
+            {%if point == 6%}
+                <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka" onclick="reka()">
+            {%endif%}
+            {%if point == 7%}
+                <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole" onclick="pole()">
+            {%endif%}
+            {%if point == 8%}
+                <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol" onclick="uh()">
+            {%endif%}
+            {%if point == 9%}
+                <img src="{{ url_for('static', filename='Images/BossPoint.png')}}" class="point" id="skoda" onclick="skoda()">
+            {%endif%}
+
+        <script src="{{ url_for('static', filename='js/{{point}}.js')}}"></script>
+        {%endfor%}
+        
     </div>
     <div id="dark"></div>
+    
     <script src="{{ url_for('static', filename='js/jad.js')}}"></script>
 </body>
 </html>

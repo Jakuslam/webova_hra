@@ -13,27 +13,16 @@
         <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon">
     </div> 
     <img src="{{ url_for('static', filename='Images/home.png') }}" class="home">
-    <div class="points">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol">
-        <img src="{{ url_for('static', filename='Images/BossPoint.png')}}" class="point" id="idk">
-    </div>
+
     <span id="o">
     <div id="dark"></div>
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
         <div class="loreUp">
             <img src="{{ url_for('static', filename='Images/slun.png') }}" class="pict"> 
-            <a class="g" href="jadG.html">Fotovoltaická elektrárna</a>
+            <a class="g" href="solarG.html">Fotovoltaická elektrárna</a>
         </div>
-        <span class="score">Skóre: <span class="score2">{{points}}</span>/{{questions}}<span></span>
+        <span class="score">Skóre: <span class="score2">{{points}}</span>/8<span></span>
     </div>
     </span>
     <script src="{{ url_for('static', filename='js/jad.js') }}"></script>

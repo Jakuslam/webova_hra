@@ -13,27 +13,16 @@
         <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon">
     </div> 
     <img src="{{ url_for('static', filename='Images/home.png') }}" class="home">
-    <div class="points">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl" onclick="jad()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl" onclick="vod()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl" onclick="vet()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl" onclick="slun()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa" onclick="bio()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les" onclick="les()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka" onclick="reka()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole" onclick="pole()">
-        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol" onclick="uh()">
-        <img src="{{ url_for('static', filename='Images/BossPoint.png')}}" class="point" id="idk" onclick="idk()">
-    </div>
+    
     <span id="o">
     <div id="dark"></div>
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
         <div class="loreUp"> 
-            <img src="{{ url_for('static', filename='Images/elektrarna-blend.png') }}" class="pict">
+            <img src="{{ url_for('static', filename='Images/bioplynarna.png') }}" class="pict">
             <a class="g" href="bioG.html">Bioplynová stanice</a> 
         </div>
-        <span class="score">Skóre: <span class="score2">{{points}}</span>/{{questions}}<span></span>
+        <span class="score">Skóre: <span class="score2">{{points}}</span>/8<span></span>
     </div>
     </span>
     <script src="{{ url_for('static', filename='js/jad.js') }}"></script> 
