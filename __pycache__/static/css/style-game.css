@@ -130,6 +130,7 @@ a:hover{
     }
 }
 .icon{
+    cursor: pointer;
     position: relative;
     width: 70px;
 }

@@ -6,7 +6,7 @@ data = [
     ["Jaké jsou nevýhody vodních elektráren?", "Potřebují vodní zdroje, vytváří nebezpečí pro vodní organismy", "Potřebují vodní zdroje, dramaticky pomáhají vysoušení krajiny", 1],
     ["Kde se nachází největší vodní elektrárna v ČR z hlediska celkového instalovaného výkonu?", "Vodní elektrárna Slapy", "Vodní elektrárna Dlouhé Stráně", 2],
     ["Jaké jsou druhy vodních elektráren?", "Jezové, derivační, chemicky upravující, přečerpávací", "Průtočné, přečerpávací, přílivové, akumulační", 2],
-    ["Na jakém principu funguje přečerpávací elektrárna?", "Využívají dvou různě výškově položených vodních nádrží a akumulují energii v podobě potenciální energie vody.", "Vyčerpává vodu ze země a mění ji na vodní páru", 2],
+    ["Na jakém principu funguje přečerpávací elektrárna?", "Využívají dvou různě výškově položených vodních nádrží a akumulují energii v podobě potenciální energie vody.", "Vyčerpává vodu ze země a mění ji na vodní páru", 1],
 ]
 
 def getInfoHydro(qNumber):

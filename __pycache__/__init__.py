@@ -35,14 +35,16 @@ def abought():
 @app.route("/achievements.html", methods=["GET","POST"])
 def achievements():
     poh = [0,0,0,0]
-    if(body[0] == 8 and body[1] == 8 and body[2] == 8 and body[3] == 8 and body[4] == 8):
-        poh[0] = 1
-    if(body[5] == 8 and body[6] == 8 and body[7] == 8 and body[8] == 8):
+    print(body)
+    if(body[0] == 8 and body[2] == 8 and body[4] == 8 and body[5] == 8 and body[8] == 8 and body[9] == 8 and body[3] == 8):
+        poh[2] = 1
+    if(body[1] == 8 and body[2] == 8 and body[7] == 8):
         poh[1] = 1
-    if(body[9] == 8):
-        poh[2] == 1
+    if(body[6] == 8):
+        poh[0] = 1
     if(poh[0] == 1 and poh[1] == 1 and poh[2] == 1):
         poh[3] = 1
+    print(poh)
     return render_template("achievements.html", poh = poh)
 
 @app.route("/settings.html", methods=["GET","POST"])
@@ -207,7 +209,7 @@ def lesG():
 
         if int(questions) +1 >= ls.getLenLes():
             body[3] = points
-            return render_template("reka.html", points = points)
+            return render_template("les.html", points = points)
 
         
         questions = 1 + int(questions)
@@ -235,7 +237,7 @@ def dolyG():
 
         if int(questions) +1 >= dl.getLenDoly():
             body[2] = points
-            return render_template("doly.html", points = points)
+            return render_template("uh.html", points = points)
         
         
         questions = 1 + int(questions)
@@ -362,7 +364,7 @@ def solarG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        otazka = vt.getInfo(int(questions))        
+        otazka = so.getInfoSolar(int(questions))        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
@@ -370,15 +372,17 @@ def solarG():
             points = 1 + int(points)
 
         print(questions)
-        if int(questions) >= vt.getLen():
+        print("PIČO.....................")
+        if int(questions) + 1>= so.getLenSolar():
+            
             body[5] = points
             return render_template("vet.html", points = points)
 
         questions = 1 + int(questions)
-        otazka = vt.getInfo(int(questions))
+        otazka = so.getInfoSolar(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
-    otazka = vt.getInfo(0)
+    otazka = so.getInfoSolar(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
 

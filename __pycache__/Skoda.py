@@ -1,5 +1,5 @@
 data = [
-    ["Který model Škoda je nabízen v elektrické verzi s nulovými emisemi CO2?", "Méně než 10 %", "Více než 30 %", 2],
+    ["Který model Škoda je nabízen v elektrické verzi s nulovými emisemi CO2?", "Enyaq iV", "Kodiaq", 1],
     ["Jak se nazývá program Škoda pro snižování ekologického dopadu výroby a logistiky?", "GreenLine", "GreenFuture", 2],
     ["Jaký je cíl snížení emisí CO2 v portfoliu vozidel Škoda do roku 2025?", "O 30%", "O 5%", 1],
     ["Jakým způsobem Škoda podporuje recyklaci baterií z elektrických vozidel?", "Opakovaným využitím a recyklací", "Skládkováním", 1],
