@@ -1,5 +1,4 @@
 data = [
-data = [
     ["Který model Škoda je nabízen v elektrické verzi s nulovými emisemi CO2?", "Méně než 10 %", "Více než 30 %", 2],
     ["Jak se nazývá program Škoda pro snižování ekologického dopadu výroby a logistiky?", "GreenLine", "GreenFuture", 2],
     ["Jaký je cíl snížení emisí CO2 v portfoliu vozidel Škoda do roku 2025?", "O 30%", "O 5%", 1],
@@ -10,12 +9,12 @@ data = [
     ["Jaký je průměrný emisní výkon vozidel Škoda v rámci evropských emisních norem?", "Pod normou Euro 6d-TEMP", "Pod normou Euro 3", 1],
 ]
 
-def getInfoLes(qNumber):
+def getInfo(qNumber):
     i = 0
     for line in data:
         if(i == qNumber):
             return line
         i += 1
 
-def getLenLes():
+def getLen():
     return(len(data))

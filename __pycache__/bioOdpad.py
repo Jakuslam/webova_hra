@@ -1,12 +1,12 @@
 data = [
-    ["Kolik spaloven se v čr nachází?", "4", "5", 1],
-    ["Mohou se spalovat ve spalovnách plasty?", "Ano", "Ne", 1],
-    ["Mohou prakticky skončit toxické látky na smetišti?", "Ne", "Ano", 2],
-    ["Co se stane po zaplnění skládky", "Nechá se vše ležet", "Všechen odpad se zrecikluje", 1],
-    ["Kolik mají dukovany bloků?", "4", "2", 1],
-    ["Kde se recikluje většina oblečení?", "V zemi vyhození", "V zemích třetího světa (např. Indie)", 2],
-    ["Mohou se dávat do komunálního odpadu baterie?", "Ano", "Ne", 2],
-    ["Jaký materiál se vyhazuje do žlutých kontejnerů?", "Plast", "Papír", 1],
+    ["Jaký je hlavní zdroj suroviny pro výrobu bioplynu v bioplynových stanicích?", "Organický materiál", "Ropa", 1],
+    ["Jaký je hlavní proces, kterým bioplynové stanice zpracovávají organický odpad?", " Fermentace", "Spalování", 1],
+    ["K čemu slouží anaerobní fermentace v procesu výroby bioplynu?", "Ke zvýšení obsahu kyslíku", "K rozkladu organických materiálů", 2],
+    ["Jaký druh bioplynu je nejběžněji využíván pro výrobu elektřiny a tepla v bioplynových stanicích?", "Biometan", "Biowatergas", 1],
+    ["Jaká je hlavní využití bioplynu v zemědělství?", "Zemědělské stroje a vybavení", "Hnojivo", 1],
+    ["Co se stane s odpadem po dokončení procesu anaerobní fermentace v bioplynových stanicích?", "Skládkování", "Vytvoření hnojiva", 2],
+    ["Jaký je hlavní výstupní produkt v procesu anaerobní fermentace?", "Bioplyn", "Elektrická energie", 1],
+    ["Jaké jsou hlavní výhody spalování bioplynu?", "Nižší výrobní náklady", "Efektivní využití organického odpadu", 2],
 ]
 
 def getInfoSkladka(qNumber):

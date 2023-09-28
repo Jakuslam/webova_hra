@@ -12,8 +12,9 @@ import les as ls
 import doly as dl
 import bioOdpad as bios
 import vodniElektrarna as vodA
-import solarniElaktrarna as so
+#import solarniElaktrarna as so
 import vet as vt
+import Skoda as skod
 from getQuestions import *
 
 
@@ -43,9 +44,9 @@ def pol():
 def bio():
     return render_template("bio.html")
 
-@app.route("/idk.html", methods=["GET","POST"])
+@app.route("/skoda.html", methods=["GET","POST"])
 def idk():
-    return render_template("idk.html")
+    return render_template("skoda.html")
 
 @app.route("/les.html", methods=["GET","POST"])
 def les():
@@ -263,8 +264,8 @@ def vodG():
     otazka = vodA.getInfoHydro(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
-@app.route("/slunG.html", methods=["GET","POST"])
-def slunG():
+@app.route("/skodaG.html", methods=["GET","POST"])
+def Skoda():
     if request.method == "POST":
         points = request.form.get("points")
         questions = request.form.get("questions")
@@ -272,10 +273,10 @@ def slunG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0, questions = 0)
         
-        if int(questions) +1 >= so.getLenSolar():
-            return render_template("slun.html", points = points, questions = int(questions) +1)
+        if int(questions) +1 >= skod.getLen():
+            return render_template("idk.html", points = points, questions = int(questions) +1)
         
-        otazka = so.getInfoSolar(int(questions))
+        otazka = skod.getInfo(int(questions))
         questions = 1 + int(questions)
         
         
@@ -284,10 +285,10 @@ def slunG():
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
-        otazka = so.getInfoSolar(int(questions))
+        otazka = skod.getInfo(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
-    otazka = so.getInfoSolar(0)
+    otazka = skod.getInfo(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
 @app.route("/vetG.html", methods=["GET","POST"])
