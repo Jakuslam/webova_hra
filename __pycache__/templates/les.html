@@ -8,10 +8,10 @@
 </head>
 <body onload="load()">
     <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
-    <div class="ceg">
-        <img src="Images/icon.png" class="icon">
-    </div>
-    <img src="Images/home.png" class="home">
+    <div class="ceg"> 
+        <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon">
+    </div> 
+<img src="{{ url_for('static', filename='Images/home.png') }}" class="home">
     <div class="points">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl">
@@ -28,11 +28,11 @@
     <div id="dark"></div>
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
-        <div class="loreUp">
-            <img src="Images/les.png" class="pict">
-            <a class="g" href="jadG.html">Forest</a>
+        <div class="loreUp"> 
+            <img src="{{ url_for('static', filename='Images/les.png')}}" class="pict">
+            <a class="g" href="les.G.html">Forest</a> 
         </div>
-        <span class="score">Score: <span class="score2">x</span>/10<span></span>
+        <span class="score">Score: <span class="score2">{{points}}</span>/{{questions}}<span></span>
     </div>
     </span>
     <script src="js/jad.js"></script>

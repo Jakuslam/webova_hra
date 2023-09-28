@@ -9,6 +9,9 @@ import jadernaEnergie
 import pole
 import reka as rk
 import les as ls
+import doly as dl
+import bioOdpad as bios
+import vodniElektrarna as vodA
 from getQuestions import *
 
 
@@ -175,6 +178,87 @@ def lesG():
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
     otazka = ls.getInfoReka(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/uhG.html", methods=["GET","POST"])
+def dolyG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= dl.getLenDoly():
+            return render_template("doly.html", points = points, questions = int(questions) +1)
+        
+        otazka = dl.getInfoDoly(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = dl.getInfoDoly(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = dl.getInfoDoly(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/bioG.html", methods=["GET","POST"])
+def bioG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= bios.getLenSkladka():
+            return render_template("bio.html", points = points, questions = int(questions) +1)
+        
+        otazka = bios.getInfoSkladka(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = bios.getInfoSkladka(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = bios.getInfoSkladka(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/vodG.html", methods=["GET","POST"])
+def vodG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= vodA.getLenHydro():
+            return render_template("vod.html", points = points, questions = int(questions) +1)
+        
+        otazka = vodA.getInfoHydro(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = vodA.getInfoHydro(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = vodA.getInfoHydro(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
 
