@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEG</title> 
+    <link rel="icon" href="{{ url_for('static', filename='Images/icon.png') }}">
+    <link href="{{ url_for('static', filename='css/style-achievements.css') }}" rel="stylesheet">
+</head> 
+<body>  
+    <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
+    <img src="{{ url_for('static', filename='Images/home.png') }}" class="home">
+    <div id="dark"></div>
+    <div class="ceg2"> 
+        <div class="w" id="skod">
+            <img src="{{ url_for('static', filename='Images/skoda.png') }}" class="im"> 
+            <p class="up">To je Škoda</p>
+            <p>Udělejte si kvíz Škoda</p>
+        </div>
+        <div class="mar"></div>
+        <div class="w" id="ekol">
+            <img src="{{ url_for('static', filename='Images/eko.png') }}" class="im"> 
+            <p class="up">Ekolog</p>
+            <p>Udělejte všechny eko kvízy</p>
+        </div>
+        <div class="mar"></div>
+        <div class="w" id="elektr">
+            <img src="{{ url_for('static', filename='Images/el.png') }}" class="im"> 
+            <p class="up">Elektrikář</p>
+            <p>Udělejte všechny energo kvízy</p>
+        </div>
+        <div class="mar"></div>
+        <div class="w" id="konec">
+            <img src="{{ url_for('static', filename='Images/final.png') }}" class="im"> 
+            <p class="up">Konec</p>
+            <p>Dokončete hru</p>
+        </div>
+    </div> 
+    <div class="ceg">  
+        <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon" onclick="back()">
+    </div> 
+    <script src="{{ url_for('static', filename='js/jad.js') }}"></script> 
+    {% if poh[0] == 1 %} 
+    <script src="{{ url_for('static', filename='js/skod.js') }}"></script>
+    {% endif%}
+    {% if poh[1] == 1 %} 
+    <script src="{{ url_for('static', filename='js/ekol.js') }}"></script>
+    {% endif%}
+    {% if poh[2] == 1 %} 
+    <script src="{{ url_for('static', filename='js/elektr.js') }}"></script>
+    {% endif%}
+    {% if poh[3] == 1 %} 
+    <script src="{{ url_for('static', filename='js/konec.js') }}"></script>
+    {%endif%}
+</body>
+</html>

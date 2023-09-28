@@ -1,0 +1,159 @@
+*{
+    margin: 0px;
+    font-size: 22px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{    
+    overflow: hidden;
+}
+.map{
+    width: 100%;
+}
+img{
+    position: absolute;
+}
+a{
+    color: rgb(18, 18, 18);
+    text-decoration: none;
+}
+.home{
+    margin-top: 10px;
+    margin-left: 12px;
+    height: 50px;
+}
+.ceg{
+    cursor: default;
+    margin-top: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.points{
+    height: 100%;
+}
+.point{
+    width: 40px;
+}
+#JadEl{
+    margin-top: 90px;
+    margin-left: 48.6%;
+}
+#SlunEl{
+    margin-top: 525px;
+    margin-left: 48.6%;
+}
+#VodEl{
+    margin-top: 245px;
+    margin-left: 4.15%;
+}
+#VetEl{
+    margin-top: 33px;
+    margin-left: 36.5%;
+}
+#Les{
+    margin-top: 405px;
+    margin-left: 95%;
+}
+#Reka{
+    margin-top: 400px;
+    margin-left: 8.7%;
+}
+#Pole{
+    margin-top: 33px;
+    margin-left: 60.5%;
+}
+#BioZa{
+    margin-top: 505px;
+    margin-left: 80.5%;
+}
+#UhDol{
+    margin-top: 9px;
+    margin-left: 89.8%;
+    rotate: 150deg;
+}
+#idk{
+    margin-top: 300px;
+    margin-left: 48.6%;
+}
+#dark{
+    width: 100%;
+    margin-top: -100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+.icon{
+    cursor: pointer;
+    position: relative;
+    width: 70px;
+}
+.ceg2{
+    cursor: default;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.w{
+    background-color: whitesmoke;
+    height: 370px;
+    width: 300px;
+    opacity: 0;
+    animation: opacityAnimation ease 0.5s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.55;
+    }
+}
+.mar{
+    width: 40px;
+}
+.up{
+    font-size: 26px;
+    font-weight: 600;
+}
+.op1{
+    background-color: rgb(190, 190, 190);
+    height: 370px;
+    width: 300px;
+    opacity: 0;
+    animation: opacity2Animation ease 0.5s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes opacity2Animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.im{
+    position: static;
+    width: 300px;
+}

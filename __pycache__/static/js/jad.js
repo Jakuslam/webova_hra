@@ -4,6 +4,9 @@ function home(){
 function jad(){
     window.location = 'jad.html';
 }
+function jadG(){
+    window.location = 'jadG.html';
+}
 function vet(){
     window.location = 'vet.html';
 }
@@ -31,7 +34,9 @@ function skoda(){
 function uh(){
     window.location = 'uh.html';
 }
+function ach(){
+    window.location = 'achievements.html';
+}
 function back(){
     window.location = 'game.html';
 }
-

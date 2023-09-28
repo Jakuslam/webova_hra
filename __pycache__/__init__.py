@@ -32,6 +32,19 @@ def home():
 def abought():
     return render_template("about.html")
 
+@app.route("/achievements.html", methods=["GET","POST"])
+def achievements():
+    poh = [0,0,0,0]
+    if(body[0] == 8 and body[1] == 8 and body[2] == 8 and body[3] == 8 and body[4] == 8):
+        poh[0] = 1
+    if(body[5] == 8 and body[6] == 8 and body[7] == 8 and body[8] == 8):
+        poh[1] = 1
+    if(body[9] == 8):
+        poh[2] == 1
+    if(poh[0] == 1 and poh[1] == 1 and poh[2] == 1):
+        poh[3] = 1
+    return render_template("achievements.html", poh = poh)
+
 @app.route("/settings.html", methods=["GET","POST"])
 def settings():
     return render_template("settings.html")
@@ -100,15 +113,15 @@ def jadG():
             return render_template("jadG.html", points = 0)
 
         otazka = jadernaEnergie.getInfoJadro(int(questions))
-
-        if int(questions) +1 >= jadernaEnergie.getLenJadro():
-            body[0] = points
-            return render_template("jad.html", points = points)
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
+        
+        if int(questions) +1 >= jadernaEnergie.getLenJadro():
+            body[0] = points
+            return render_template("jad.html", points = points)
 
         if(request.form.get("b")):
             print(2)
@@ -129,20 +142,19 @@ def poleG():
         
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
-        
-        if int(questions) +1 >= pole.getLenPole():
-            body[1] = points
-            return render_template("pole.html", points = points)
-        
         otazka = pole.getInfoPole(int(questions))
-        questions = 1 + int(questions)
-        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        if int(questions) +1 >= pole.getLenPole():
+            body[1] = points
+            return render_template("pole.html", points = points)
+        
+        
+        questions = 1 + int(questions)
         otazka = pole.getInfoPole(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -157,21 +169,20 @@ def rekaG():
         questions = request.form.get("questions")
         
         if(points == None or questions == None):
-            return render_template("jadG.html", points = 0)
-        
-        if int(questions) +1 >= rk.getLenReka():
-            body[7] = points
-            return render_template("reka.html", points = points)
-        
-        otazka = rk.getInfoReka(int(questions))
-        questions = 1 + int(questions)
-        
+            return render_template("jadG.html", points = 0)   
+        otazka = rk.getInfoReka(int(questions))   
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        if int(questions) +1 >= rk.getLenReka():
+            body[7] = points
+            return render_template("reka.html", points = points)
+        
+        
+        questions = 1 + int(questions)
         otazka = rk.getInfoReka(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -185,21 +196,21 @@ def lesG():
         questions = request.form.get("questions")
         
         if(points == None or questions == None):
-            return render_template("jadG.html", points = 0)
-        
-        if int(questions) +1 >= ls.getLenLes():
-            body[3] = points
-            return render_template("reka.html", points = points)
-        
-        otazka = ls.getInfoLes(int(questions))
-        questions = 1 + int(questions)
-        
+            return render_template("jadG.html", points = 0)  
+
+        otazka = ls.getInfoLes(int(questions))      
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        if int(questions) +1 >= ls.getLenLes():
+            body[3] = points
+            return render_template("reka.html", points = points)
+
+        
+        questions = 1 + int(questions)
         otazka = ls.getInfoLes(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -214,20 +225,20 @@ def dolyG():
         
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
-        
-        if int(questions) +1 >= dl.getLenDoly():
-            body[2] = points
-            return render_template("doly.html", points = points)
-        
+              
         otazka = dl.getInfoDoly(int(questions))
-        questions = 1 + int(questions)
-        
-        
+
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        if int(questions) +1 >= dl.getLenDoly():
+            body[2] = points
+            return render_template("doly.html", points = points)
+        
+        
+        questions = 1 + int(questions)
         otazka = dl.getInfoDoly(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -243,19 +254,18 @@ def bioG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        if int(questions) +1 >= bios.getLenSkladka():
-            body[4] = points
-            return render_template("bio.html", points = points)
-        
-        otazka = bios.getInfoSkladka(int(questions))
-        questions = 1 + int(questions)
-        
+        otazka = bios.getInfoSkladka(int(questions))      
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
+        
+        if int(questions) +1 >= bios.getLenSkladka():
+            body[4] = points
+            return render_template("bio.html", points = points)
 
+        questions = 1 + int(questions)
         otazka = bios.getInfoSkladka(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -271,19 +281,18 @@ def vodG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        if int(questions) +1 >= vodA.getLenHydro():
-            body[8] = points
-            return render_template("vod.html", points = points)
-        
-        otazka = vodA.getInfoHydro(int(questions))
-        questions = 1 + int(questions)
-        
+        otazka = vodA.getInfoHydro(int(questions))        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
+        
+        if int(questions) +1 >= vodA.getLenHydro():
+            body[8] = points
+            return render_template("vod.html", points = points)
 
+        questions = 1 + int(questions)
         otazka = vodA.getInfoHydro(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -299,19 +308,18 @@ def Skoda():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        if int(questions) +1 >= skod.getLen():
-            body[6] = points
-            return render_template("skoda.html", points = points)
-        
-        otazka = skod.getInfo(int(questions))
-        questions = 1 + int(questions)
-        
+        otazka = skod.getInfo(int(questions))        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        if int(questions) +1 >= skod.getLen():
+            body[6] = points
+            return render_template("skoda.html", points = points)
+
+        questions = 1 + int(questions)
         otazka = skod.getInfo(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -327,19 +335,18 @@ def vetG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        if int(questions) +1 >= vt.getLen():
-            body[9] = points
-            return render_template("vet.html", points = points)
-        
-        otazka = vt.getInfo(int(questions))
-        questions = 1 + int(questions)
-        
+        otazka = vt.getInfo(int(questions))       
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
+        
+        if int(questions) +1 >= vt.getLen():
+            body[9] = points
+            return render_template("vet.html", points = points)
 
+        questions = 1 + int(questions)
         otazka = vt.getInfo(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
@@ -355,19 +362,19 @@ def solarG():
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
         
-        if int(questions) +1 >= vt.getLen():
-            body[5] = points
-            return render_template("vet.html", points = points)
-        
-        otazka = vt.getInfo(int(questions))
-        questions = 1 + int(questions)
-        
+        otazka = vt.getInfo(int(questions))        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
+        print(questions)
+        if int(questions) >= vt.getLen():
+            body[5] = points
+            return render_template("vet.html", points = points)
+
+        questions = 1 + int(questions)
         otazka = vt.getInfo(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
