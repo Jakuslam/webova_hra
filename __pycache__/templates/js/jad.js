@@ -34,6 +34,16 @@ function idk(){
 function uh(){
     window.location = 'uh.html';
 }
+function ach(){
+    window.location = 'achievements.html';
+}
 function back(){
     window.location = 'game.html';
 }
+
+let a = document.getElementById("skod");
+let b = document.getElementById("ekol");
+let c = document.getElementById("elektr");
+let d = document.getElementById("konec");
+a.classList.add("op1");
+a.classList.remove("w");
