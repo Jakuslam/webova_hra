@@ -19,7 +19,7 @@
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="Les">
+        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol">
@@ -31,11 +31,13 @@
         <a class="back" onclick="back()">x</a>
         <div class="loreUp"> 
             <img src="{{ url_for('static', filename='Images/les.png')}}" class="pict">
-            <a class="g" href="les.G.html">Les</a> 
+
+            <a class="g" href="lesG.html">Forest</a> 
+
         </div>
         <span class="score">Score: <span class="score2">{{points}}</span>/{{questions}}<span></span>
     </div>
     </span>
-    <script src="js/jad.js"></script>
+    <script src="{{ url_for('static', filename='js/jad.js')}}"></script>
 </body>
 </html>
