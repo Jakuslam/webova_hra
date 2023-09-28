@@ -274,7 +274,7 @@ def Skoda():
             return render_template("jadG.html", points = 0, questions = 0)
         
         if int(questions) +1 >= skod.getLen():
-            return render_template("idk.html", points = points, questions = int(questions) +1)
+            return render_template("skoda.html", points = points, questions = int(questions) +1)
         
         otazka = skod.getInfo(int(questions))
         questions = 1 + int(questions)

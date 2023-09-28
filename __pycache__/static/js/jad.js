@@ -25,8 +25,8 @@ function les(){
 function pole(){
     window.location = 'pole.html';
 }
-function idk(){
-    window.location = 'idk.html';
+function skoda(){
+    window.location = 'skoda.html';
 }
 function uh(){
     window.location = 'uh.html';
