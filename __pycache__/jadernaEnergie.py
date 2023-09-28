@@ -6,7 +6,7 @@ data = [
     ["Kolik mají dukovany bloků?", "4", "6", 1],
     ["Jaká jaderná elektrárna selhala kvůli lidské chybě?", "Fukušima", "Černobyl", 2],
     ["Vlastní ČEZ dukovany?", "Ano", "Ne", 1],
-    ["Z kolika dílů se skládají jaderné elektrárny", "3", "1", 1],
+    ["Z kolika dílů se skládají jaderné elektrárny?", "3", "1", 1],
 ]
 
 def getInfoJadro(qNumber):

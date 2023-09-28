@@ -15,7 +15,6 @@ import vodniElektrarna as vodA
 import solarniElaktrarna as so
 import vet as vt
 import Skoda as skod
-from getQuestions import *
 
 
 app = Flask(__name__)
@@ -35,16 +34,14 @@ def abought():
 @app.route("/achievements.html", methods=["GET","POST"])
 def achievements():
     poh = [0,0,0,0]
-    print(body)
-    if(body[0] == 8 and body[2] == 8 and body[4] == 8 and body[5] == 8 and body[8] == 8 and body[9] == 8 and body[3] == 8):
+    if(body[0] == 8 and body[4] == 8 and body[5] == 8 and body[8] == 8 and body[9] == 8):
         poh[2] = 1
-    if(body[1] == 8 and body[2] == 8 and body[7] == 8):
+    if(body[1] == 8 and body[2] == 8 and body[3] == 8 and body[7] == 8):
         poh[1] = 1
     if(body[6] == 8):
         poh[0] = 1
     if(poh[0] == 1 and poh[1] == 1 and poh[2] == 1):
         poh[3] = 1
-    print(poh)
     return render_template("achievements.html", poh = poh)
 
 @app.route("/settings.html", methods=["GET","POST"])
@@ -53,12 +50,23 @@ def settings():
 
 @app.route("/game.html", methods=["GET","POST"])
 def newGame():
+    #body[0] = 8
+    #body[1] = 8
+    #body[2] = 8
+    #body[3] = 8
+    #body[4] = 8
+    #body[5] = 8
+    #body[6] = 8
+    #body[7] = 8
+    #body[8] = 8
+    #body[9] = 8
+    if(body[0] == 8 and body[1] == 8 and body[2] == 8 and body[3] == 8 and body[4] == 8 and body[5] == 8 and body[6] == 8 and body[7] == 8 and body[8] == 8 and body[9] == 8):
+        return render_template("konec.html")
     questions = []
     i = 0
     for point in body:
         if(int(point) != 8):
             questions.append(i)
-            print(point)
         else:
             questions.append(-1)
         i += 1
@@ -124,9 +132,6 @@ def jadG():
         if int(questions) +1 >= jadernaEnergie.getLenJadro():
             body[0] = points
             return render_template("jad.html", points = points)
-
-        if(request.form.get("b")):
-            print(2)
 
         
         questions = 1 + int(questions)
@@ -371,8 +376,6 @@ def solarG():
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
 
-        print(questions)
-        print("PIČO.....................")
         if int(questions) + 1>= so.getLenSolar():
             
             body[5] = points
