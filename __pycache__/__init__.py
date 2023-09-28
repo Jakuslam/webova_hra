@@ -14,6 +14,7 @@ import bioOdpad as bios
 import vodniElektrarna as vodA
 import solarniElaktrarna as so
 import vet as vt
+import Skoda as skod
 from getQuestions import *
 
 
@@ -298,8 +299,6 @@ def Skoda():
     otazka = skod.getInfo(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
-<<<<<<< HEAD
-=======
 @app.route("/vetG.html", methods=["GET","POST"])
 def vetG():
     if request.method == "POST":
@@ -327,7 +326,6 @@ def vetG():
     otazka = vt.getInfo(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
->>>>>>> 283a0608e8c419897b10210196a5241d584360f9
 
 if(__name__ == "__main__"):
     app.run(debug=True)

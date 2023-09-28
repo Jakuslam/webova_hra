@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEG</title>
-    <link rel="icon" href="Images/icon.png">
+    <link rel="icon" href="{{ url_for('static', filename='Images/icon.png') }}">
     <link href="{{ url_for('static', filename='css/style-ten.css') }}" rel="stylesheet">
 </head>
 <body onload="load()">
@@ -34,7 +34,7 @@
             <a class="g" href="poleG.html">Pole</a>
 
         </div>
-        <span class="score">Score: <span class="score2">{{points}}</span>/{{questions}}<span></span>
+        <span class="score">Skóre: <span class="score2">{{points}}</span>/{{questions}}<span></span>
     </div>
     </span>
     <script src="{{ url_for('static', filename='js/jad.js') }}"></script>

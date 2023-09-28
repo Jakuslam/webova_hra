@@ -18,3 +18,4 @@ def getInfoJadro(qNumber):
 
 def getLenJadro():
     return(len(data))
+

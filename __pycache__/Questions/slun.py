@@ -1,5 +1,4 @@
 data = [
-data = [
     ["Jaká je hlavní složka fotovoltaických panelů pro přeměnu sluneční energie na elektřinu?", "Křemík", "Ocel", 1],
     ["Jaký typ slunečního záření je nejvíce využíván fotovoltaickými elektrárnami?", "Sluneční záření v podobě tepla", "Sluneční záření v podobě fotónů", 2],
     ["Jak se nazývá proces, kterým fotovoltaické panely generují elektrickou energii?", "Fotosyntéza", "Fotovoltaický jev", 2],
