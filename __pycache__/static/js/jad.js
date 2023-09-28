@@ -34,3 +34,6 @@ function uh(){
 function back(){
     window.location = 'game.html';
 }
+
+let j = document.getElementById("JadEl");
+j.parentNode.removeChild(j);

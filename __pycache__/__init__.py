@@ -12,9 +12,8 @@ import les as ls
 import doly as dl
 import bioOdpad as bios
 import vodniElektrarna as vodA
-#import solarniElaktrarna as so
+import solarniElaktrarna as so
 import vet as vt
-import Skoda as skod
 from getQuestions import *
 
 
@@ -23,10 +22,18 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
 
-#webside
+#webside 
 @app.route("/", methods=["GET","POST"])
 def home():
-    return render_template("h2.html")
+    return render_template("h2.html") 
+
+@app.route("/about.html", methods=["GET","POST"])
+def abought():
+    return render_template("about.html")
+
+@app.route("/settings.html", methods=["GET","POST"])
+def settings():
+    return render_template("settings.html")
 
 @app.route("/game.html", methods=["GET","POST"])
 def newGame():
@@ -291,6 +298,8 @@ def Skoda():
     otazka = skod.getInfo(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
+<<<<<<< HEAD
+=======
 @app.route("/vetG.html", methods=["GET","POST"])
 def vetG():
     if request.method == "POST":
@@ -318,6 +327,7 @@ def vetG():
     otazka = vt.getInfo(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
+>>>>>>> 283a0608e8c419897b10210196a5241d584360f9
 
 if(__name__ == "__main__"):
     app.run(debug=True)
