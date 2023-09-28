@@ -1,19 +1,19 @@
 Vodní elektrárny
-c) Vodní elektrárny jsou zdrojem energie: 
-• Obnovitelné 
-• Neobnovitelné 
-d) Jak funguje vodní elektrárna? 
-• Generátor mění pohybovou energii vody na elektrickou energii 
-• Turbíny roztáčí vodní pára všudypřítomná na hladině. 
-e) Kolik procent celkové výroby elektrické energie tvoří energie z vodních elektráren? 
-• Přibližně 3% 
-• Přibližně 7% 
-f) Mohou vodní elektrárny být použity pro skladování energie? 
-• ANO můžou být užity pro skladování 
+c)  
+•  
+•  
+d) 
+• 
+• 
+e) 
+• 
+• 
+f) 
+• 
 • NE 
-g) Jaké jsou nevýhody vodních elektráren? 
-• Potřebují vodní zdroje, vytváří nebezpečí pro vodní organismy 
-• Potřebují vodní zdroje, dramaticky pomáhají vysoušení krajiny.
+g) 
+• 
+• y.
 
 Větrná energie
 a) Jak funguje větrná elektrárna? 
@@ -23,145 +23,28 @@ b) Jaké jsou různé druhy větrných elektráren?
 • přímořské, vnitrozemské a umístěné na moři 
 • vnitrozemské, podvodní, vesmírné 
 
-Jaderná energie
-a) Jak funguje jaderná elektrárna? 
-• Funguje na principu jaderného štěpení 
-• Funguje na principu makroexplozí jaderných bomb 
-b) Potřebuje jaderná elektrárna chlazení? 
-• Ano, využívá k tomu chladící věže 
-• Ne, neuvolňuje se žádné teplo
-c) Kolik procent Energie v Čr je vyráběno pomocí jaderných elektráren_ 
-• 36,7%
-• 14,5%
-d) Kolik je jaderných elektráren v Čr?
-•2
-•3
-e) Kolik mají dukovany bloků?
-• 4
-• 5
-f) Jaká jaderná elektrárna selhala kvůli lidské chybě?
-• Fukušima
-• Černobyl
-g) Vlastní ČEZ dukovany?
-• Ano
-• Ne
-
-
-
-Solární elektrárna
-a) Jaké napětí běžně vyrábí fotovoltaické panely?
-• 24V / 12V 
-• 60V / 120V
-b) Lze pěstovat pod FVE panely rostliny?
-• Ano
-• Ne
-c) K čemu slouží měnič u FVE
-• Převádění DC z FVE do AC síťového napětí
-• Přehrávání AC/DC
-d) Mohou se instalovat v CHKO všechny FV panely
-•Ne
-•Ano
-e) Kolik energie průměrně v čr vyrobí jeden FV panel
-• 250kWh - 400kWh
-• 300kWh - 600kWh
-f) Vyrábí FVE více, když je chlazená?
-•Ano
-•Ne
-g) O kolik se v zimě sníží účinnost FVE?
-• o 20%
-• o 50%
-
-Pole
-a)Jak by se měly orat brázdy
-• Horizontálně se svahem
-• Kolmo ke svahu
-b) Jaká značka je vyhlášená konstruováním traktorů?
-• Zetor
-• Tatra
-c) Kdy se seje ozim
-• Zima
-• Jaro
-d) Umí lidský metabolizmus zpracovat krmnou kukuřici
-• Ano
-• Ne
-e) Co nebo kdo je to Remízek?
-• Úsek mezi poly
-• Ministr zemědělství
-f) Jaká je nejpěstovanější plodina v čr?
-• Řepka olejka
-• Mák
-g) Co je mrva?
-• Lejna zvířat, která se používají na hnojení.
-• Typ obylniny pěstovaný v nepříznivých podmínkách.
-
 Les
-a) Je povolené rozdělávat oheň v lese?
-• Pouze na určených místech
-• Všude
-b) Je zakázáno lovit všechna zvířata v době páření
+a) 
+• 
+• 
+b) 
 •Ne
 •Ano
-c) Je povoleno po většinu roku lovit vlky?
+c) 
 •Ne
 •Ano
-d) Jaké je v čr tradyční složení lesů
-• Smíšený
-• Jehličnatý
-e) Co je to lužní les
-• Les v němž se čas od času zaplaven vodou
-• Les v němž je velké množství mýtin
-f) Je koniklec chráněná rostlina?
+d) 
+• 
+• 
+e) 
+• u
+• 
+f) 
 • Ano
 • Ne
-g) Nachází se v Čr neaktivní sopky?
+g) 
 • Ano
 • Ne
-
-Skládka
-a)Kolik spaloven se v čr nachází?
-• 4
-• 5
-b) Mohou se spalovat ve spalovnách plasty?
-• Ano
-• Ne
-c) Mohou prakticky skončit toxické látky na smetišti?
-• Ano
-• Ne
-d) Co se stane po zaplnění skládky
-• Zahází se hlínou
-• Odpad se odveze jinam
-e) Kde se recikluje většina oblečení
-• V zemi vyhození
-• V zemích třetího světa (např. Indie)
-f) Mohou se dávat do komunálního odpadu baterie?
-• Ne
-• Ano
-g) Jaký materiál se vyhazuje do žlutých kontejnerů?
-• Plast
-• Papír
-
-Doly
-a) Co je hlubinná těžba?
-• těžení ve štolách 
-• těžení na povrchu 
-b) Jak se nazívají hromady vykopané zeminy?
-• Hlušina
-• Tišina
-c) Jak se nazívá proces znovuobnovení přirody po těžbě?
-• revitalizace
-• rekonstrukce
-d) Je možno těžbou narušit prameny pitné vody
-• Ano
-• Ne
-e) Je možné posuniout kostel kvůli těžbe?
-• Ano
-• Ne
-f) O kolik byl tento kostel posunut?
-• 50m
-• 5m
-g) Jaké uhlí je straší?
-• Černé
-• Hnědé
 
 Bioplynová stanice:
 a) Z č

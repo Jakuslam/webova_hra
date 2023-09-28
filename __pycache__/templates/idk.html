@@ -29,13 +29,13 @@
     <div id="dark"></div>
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
-        <div class="loreUp">
-            <img src="Images/elektrarna-blend.png" class="pict">
-            <a class="g" href="jadG.html">Idk</a>
+        <div class="loreUp"> 
+            <img src="{{ url_for('static', filename='Images/elektrarna-blend.png') }}" class="pict">
+            <a class="g" href="idkG.html">Idk</a>
         </div>
-        <span class="score">Score: <span class="score2">x</span>/10<span></span>
+        <span class="score">Score: <span class="score2">{{points}}</span>/{{questions}}<span></span>
     </div>
     </span>
-    <script src="js/jad.js"></script>
+    <script src="{{ url_for('static', filename='js/jad.js') }}"></script>
 </body>
 </html>

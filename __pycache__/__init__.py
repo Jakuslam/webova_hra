@@ -7,6 +7,8 @@ from wtforms import FileField, SubmitField
 from wtforms.validators import InputRequired
 import jadernaEnergie
 import pole
+import reka as rk
+import les as ls
 from getQuestions import *
 
 
@@ -71,21 +73,24 @@ def jadG():
         questions = request.form.get("questions")
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0, questions = 0)
-        print(questions)
+
         otazka = jadernaEnergie.getInfoJadro(int(questions))
 
         if int(questions) +1 >= jadernaEnergie.getLenJadro():
-            return render_template("jad.html", points = points, questions = questions)
+            return render_template("jad.html", points = points, questions = int(questions) + 1)
         
         print(otazka)
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
 
         if(request.form.get("b")):
             print(2)
+
         
         questions = 1 + int(questions)
-        
+        otazka = jadernaEnergie.getInfoJadro(int(questions))
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
     otazka = jadernaEnergie.getInfoJadro(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
@@ -95,21 +100,81 @@ def poles():
     if request.method == "POST":
         points = request.form.get("points")
         questions = request.form.get("questions")
+        
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0, questions = 0)
         
-        otazka = pole.getInfoPole(int(questions))
-
         if int(questions) +1 >= pole.getLenPole():
-            return render_template("pole.html", points = points, questions = questions)
+            return render_template("pole.html", points = points, questions = int(questions) +1)
+        
+        otazka = pole.getInfoPole(int(questions))
+        questions = 1 + int(questions)
+        
         
         if(otazka[3] == 1 and request.form.get("a")):
             points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
 
-        questions = 1 + int(questions)
+        otazka = pole.getInfoPole(int(questions))
         
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
     otazka = pole.getInfoPole(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+
+@app.route("/rekaG.html", methods=["GET","POST"])
+def rekaG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= rk.getLenReka():
+            return render_template("reka.html", points = points, questions = int(questions) +1)
+        
+        otazka = rk.getInfoReka(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = rk.getInfoReka(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = rk.getInfoReka(0)
+    return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
+
+@app.route("/lesG.html", methods=["GET","POST"])
+def lesG():
+    if request.method == "POST":
+        points = request.form.get("points")
+        questions = request.form.get("questions")
+        
+        if(points == None or questions == None):
+            return render_template("jadG.html", points = 0, questions = 0)
+        
+        if int(questions) +1 >= ls.getLenReka():
+            return render_template("reka.html", points = points, questions = int(questions) +1)
+        
+        otazka = ls.getInfoReka(int(questions))
+        questions = 1 + int(questions)
+        
+        
+        if(otazka[3] == 1 and request.form.get("a")):
+            points = 1 + int(points)
+        elif(otazka[3] == 2 and request.form.get("b")):
+            points = 1 + int(points)
+
+        otazka = ls.getInfoReka(int(questions))
+        
+        return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    otazka = ls.getInfoReka(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
 

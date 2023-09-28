@@ -4,6 +4,9 @@ function home(){
 function jad(){
     window.location = 'jad.html';
 }
+function jadG(){
+    window.location = 'jadG.html';
+}
 function vet(){
     window.location = 'vet.html';
 }

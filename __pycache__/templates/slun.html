@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEG</title>
-    <link href="css/style-ten.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style-ten.css') }}" rel="stylesheet">
 </head>
 <body onload="load()">
     <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
     <div class="ceg">
-        <img src="Images/icon.png" class="icon">
-    </div>
-    <img src="Images/home.png" class="home">
+        <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon">
+    </div> 
+    <img src="{{ url_for('static', filename='Images/home.png') }}" class="home">
     <div class="points">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl">
@@ -29,12 +29,12 @@
     <div id="graybg">
         <a class="back" onclick="back()">x</a>
         <div class="loreUp">
-            <img src="Images/slun.png" class="pict">
+            <img src="{{ url_for('static', filename='Images/slun.png') }}" class="pict"> 
             <a class="g" href="jadG.html">Photovoltaic power plant</a>
         </div>
-        <span class="score">Score: <span class="score2">x</span>/10<span></span>
+        <span class="score">Score: <span class="score2">{{points}}</span>/{{questions}}<span></span>
     </div>
     </span>
-    <script src="js/jad.js"></script>
+    <script src="{{ url_for('static', filename='js/jad.js') }}"></script>
 </body>
 </html>

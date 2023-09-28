@@ -8,17 +8,17 @@
 </head>
 <body> 
     <img src="{{ url_for('static', filename='Images/map.png') }}" class="map">
-    <div class="ceg">
-        <img src="Images/icon.png" class="icon">
-    </div>
-    <img src="Images/home.png" class="home" onclick="home()">
+    <div class="ceg"> 
+        <img src="{{ url_for('static', filename='Images/icon.png') }}" class="icon">
+    </div> 
+    <img src="{{ url_for('static', filename='Images/home.png') }}" class="home" onclick="home()">
     <div class="points">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="JadEl" onclick="jad()">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VodEl" onclick="vod()">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="VetEl" onclick="vet()">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="SlunEl" onclick="slun()">
         <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="BioZa" onclick="bio()">
-        <img src="{{ url_for('static', filename='Images/ElPoint.png') }}" class="point" id="Les" onclick="les()">
+        <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Les" onclick="les()">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Reka" onclick="reka()">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="Pole" onclick="pole()">
         <img src="{{ url_for('static', filename='Images/EcPoint.png') }}" class="point" id="UhDol" onclick="uh()">

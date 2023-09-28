@@ -5,7 +5,7 @@ data = [
     ["Umí lidský metabolizmus zpracovat krmnou kukuřici", "Ano", "Ne", 1],
     ["Co nebo kdo je to Remízek?", "Úsek louky mezi poly", "Ministr zemědělství", 1],
     ["Jaká je nejpěstovanější plodina v čr?", "Řepka olejka", "Mák", 1],
-    ["Co je mrva?", "Lejna zvířat, která se používají na hnojení", "Typ obylniny pěstovaný v nepříznivých podmínkách", 2],
+    ["Co je mrva?", "Lejna zvířat, která se používají na hnojení", "Typ obylniny pěstovaný v nepříznivých podmínkách", 1],
     ["Jak dlouho roste více letka", "2 roky", "více jak 2 roky", 2],
 ]
 
