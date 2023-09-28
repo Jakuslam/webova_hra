@@ -1,11 +1,24 @@
 *{
     margin: 0px;
-    color: rgb(18, 18, 18);
+    color: rgb(255, 255, 255);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 28px;
+    font-size: 34px;
 }
 body{
     overflow: hidden;
+}
+.post{
+    width: 35%;
+    margin-left: 60%;
+    margin-top: 4%;
+    position: absolute;
+}
+.home{
+    position: absolute;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 12px;
+    height: 50px;
 }
 #bg{
     margin-top: -6%;
@@ -13,9 +26,39 @@ body{
     height: 120%;
     position: absolute;
 }
-.material-icon {
-    position: fixed;
-}
-span{    
+#dark{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.45;
     position: absolute;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0.45;
+    }
+    100% {
+        opacity: 0.65;
+    }
+}
+#about{
+    position: absolute;
+}
+.text{
+    margin-left: 100px;
+}
+span{  
+    margin-top: 75px; 
+    margin-left: 70px;
+    width: 50%;
+    position: absolute;
+}
+.cs{
+    width: 100%;
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 160px;
 }
