@@ -5,8 +5,8 @@ která svou obtížností může zabavit nejmeční, ale naučit něco i dospěl
 
 Pravidla:
 
-Při rozkliknutí tlačítka "Hra" je člověk převeden na stránku, kde se nachází 10 sad otézek po 8 otázkách, které jsou rozděleny do 3 okruhů, 
-energie (žlutá), ekologie (zelená), o automobilce Škoda (modrá). Pokud člověk dokončí sadu otázek a zodpoví vše správně, tak tato sada zmizí. 
+Při rozkliknutí tlačítka "Hra" je člověk převeden na stránku, kde se nachází 10 sad otézek po 8 otázkách, které jsou rozděleny do 3 okruhů. 
+Energie (žlutá), ekologie (zelená), o automobilce Škoda (modrá). Pokud člověk dokončí sadu otázek a zodpoví vše správně, tak tato sada zmizí. 
 Za správné zodpovězení všech otázek v okruhu člověk dostane achievement a při správném zodpovězení všech otázek se hráči zobrazí výtězná obrazovka.
 
 Jak funguje kód:
