@@ -119,28 +119,30 @@ def vod():
 #quizz checkers
 @app.route("/jadG.html", methods=["GET","POST"]) 
 def jadG():
-    if request.method == "POST":
+    if request.method == "POST": #if button is set
+        #it gets points and questions
         points = request.form.get("points")
         questions = request.form.get("questions")
         if(points == None or questions == None):
             return render_template("jadG.html", points = 0)
 
-        otazka = jadernaEnergie.getInfoJadro(int(questions))
+        otazka = jadernaEnergie.getInfoJadro(int(questions)) #gets a question, 2 answers and wich is correct
         
-        if(otazka[3] == 1 and request.form.get("a")):
+        if(otazka[3] == 1 and request.form.get("a")): #checking correct answers
             points = 1 + int(points)
         elif(otazka[3] == 2 and request.form.get("b")):
             points = 1 + int(points)
         
-        if int(questions) +1 >= jadernaEnergie.getLenJadro():
+        if int(questions) +1 >= jadernaEnergie.getLenJadro(): #if we get to last question it will return us back
             body[0] = points
             return render_template("jad.html", points = points)
 
         
-        questions = 1 + int(questions)
-        otazka = jadernaEnergie.getInfoJadro(int(questions))
+        questions = 1 + int(questions) #incrementing question number
+        otazka = jadernaEnergie.getInfoJadro(int(questions)) #get info
 
         return render_template("jadG.html", points = points, questions = questions, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2] )
+    #first question
     otazka = jadernaEnergie.getInfoJadro(0)
     return render_template("jadG.html", points = 0, questions = 0, question = otazka[0], ansv1 = otazka[1], ansv2 = otazka[2])
 
