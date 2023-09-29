@@ -17,7 +17,7 @@ import solarniElaktrarna as so
 import vet as vt
 import Skoda as skod
 
-#setuping dlask
+#setuping flask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
