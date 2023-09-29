@@ -1,7 +1,7 @@
 Popis:
 
 Tento projekt by měla být zábavná vzdělávací hra na téma ekologie s příměsí automobilizmu. V našem pojetí jsme z toho vytvořili 2D interaktivní point-click naučnou hru,
-která svou obtížností může zabavit nejmeční, ale naučit něco i dospělé.
+která svou může zabavit nejmeční, ale naučit něco i dospělé.
 
 Pravidla:
 
