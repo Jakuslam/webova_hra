@@ -11,7 +11,7 @@ Za správné zodpovězení všech otázek v okruhu člověk dostane achievement 
 
 Jak funguje kód:
 
-Primární soubor __init__.py načítá hráči stránky pomocí knihovny Flask. Pokud se hráč proklikne na quizz, tak se načte soubor "jadG.html" a pošle do něj otázky, které se načtou z importovaných python souborů (v každém je jedna sada otázek). Program počítá na kolikáté otázce a podle toho přiřazuje další otázky a vyhodnocuje správnost odpovědí. Při dokončení kvízu se výsledné body zapíší do listu "body[9]", kde každé pole má přiřazenou sadu otázek. Pokaždé při načtení hlavní mapy se vyhodnocuje, zda je na všech místech tohoto listu 8 bodů, pokud tomu tak je, tak se spustí vítězná obrazovka.
+Primární soubor __init__.py načítá hráči stránky pomocí knihovny Flask. Pokud se hráč proklikne na quizz, tak se načte soubor "jadG.html" a pošlou se do něj otázky, které se načtou z importovaných python souborů (v každém je jedna sada otázek). Program počítá na kolikáté otázce je hráč a podle toho přiřazuje další otázky a vyhodnocuje správnost odpovědí. Při dokončení kvízu se výsledné body zapíší do listu "body[9]", kde každé pole má přiřazenou sadu otázek. Pokaždé při načtení hlavní mapy se vyhodnocuje, zda je na všech místech tohoto listu 8 bodů, je li tomu tak, tak se spustí vítězná obrazovka.
 
 Na tomto projektu pracovali:
 Vladyslav Kyrychenko (frontend), Jakub Sláma (backend)   Tým 3
