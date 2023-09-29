@@ -1,3 +1,4 @@
+#importing libraries
 from urllib import request
 from flask import render_template, request
 
@@ -16,12 +17,12 @@ import solarniElaktrarna as so
 import vet as vt
 import Skoda as skod
 
-
+#setuping dlask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'weby'
 
-body = [0,0,0,0,0,0,0,0,0,0]
+body = [0,0,0,0,0,0,0,0,0,0] #variable for holding points
 #webside 
 @app.route("/", methods=["GET","POST"])
 def home():
@@ -33,7 +34,7 @@ def abought():
 
 @app.route("/achievements.html", methods=["GET","POST"])
 def achievements():
-    poh = [0,0,0,0]
+    poh = [0,0,0,0] #checking if someone got all questions right
     if(body[0] == 8 and body[4] == 8 and body[5] == 8 and body[8] == 8 and body[9] == 8):
         poh[2] = 1
     if(body[1] == 8 and body[2] == 8 and body[3] == 8 and body[7] == 8):
@@ -60,11 +61,12 @@ def newGame():
     #body[7] = 8
     #body[8] = 8
     #body[9] = 8
+    #check if is not win
     if(body[0] == 8 and body[1] == 8 and body[2] == 8 and body[3] == 8 and body[4] == 8 and body[5] == 8 and body[6] == 8 and body[7] == 8 and body[8] == 8 and body[9] == 8):
         return render_template("konec.html")
     questions = []
     i = 0
-    for point in body:
+    for point in body: #if some question has 8/8 points, then it will not show it on the screen
         if(int(point) != 8):
             questions.append(i)
         else:
@@ -73,7 +75,7 @@ def newGame():
             
         
     return render_template("game.html", body = questions)
-
+#rendering questions
 @app.route("/jad.html", methods=["GET","POST"])
 def jad():
     return render_template("jad.html", points = body[0])
@@ -114,7 +116,8 @@ def vet():
 def vod():
     return render_template("vod.html", points = body[8])
 
-@app.route("/jadG.html", methods=["GET","POST"])
+#quizz checkers
+@app.route("/jadG.html", methods=["GET","POST"]) 
 def jadG():
     if request.method == "POST":
         points = request.form.get("points")
